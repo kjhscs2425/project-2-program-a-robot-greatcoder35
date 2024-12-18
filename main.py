@@ -32,13 +32,16 @@ def seizure(length):
             right(random.uniform(0.5,2))
 
 def first_move():
-    print(leftdistance)
-    print(rightdistance)
-    choice1 = float(input("How far should the robot move? "))
-    forward(choice1)
-    print(leftdistance)
-    print(rightdistance)
+    choice1 = float(input("How far should the robot move? (1-20) "))
     choice2 = str(input("What direction should the robot turn? (L or R) "))
+    choice3 = str(input("Should the robot move forward or backward? (F or B) "))
+    choice4 = float(input("How far should the robot move? (1-10) "))
+    choice5 = float(input("How many seconds should the robot have a seizure for? "))
+    print(leftdistance)
+    print(rightdistance)
+    forward(choice1*0.1)
+    print(leftdistance)
+    print(rightdistance)
     if choice2 == "L":
         print("turning left")
         choice2 = "L"
@@ -49,19 +52,16 @@ def first_move():
         right(90)
     print(leftdistance)
     print(rightdistance)
-    choice3 = str(input("Should the robot move forward or backward? (F or B) "))
-    choice4 = float(input("How far should the robot move? "))
     if choice3 == "B":
         print("moving backward")
         choice3 = "B"
-        backward(choice4)
+        backward(choice4*0.1)
     elif choice3 == "F":
         print("moving forward")
         choice3 = "F"
-        forward(choice4)
+        forward(choice4*0.1)
     print(leftdistance)
     print(rightdistance)
-    choice5 = float(input("How many seconds should the robot have a seizure for? "))
     seizure(choice5)
 def second_move():
     if choice3 == "B":
@@ -78,9 +78,6 @@ def second_move():
         left(90)
     backward(choice1)
 
-
 leftdistance, rightdistance = robot.sonars()
 
-while leftdistance and rightdistance >= 250:
-        print("good to go")
 first_move()
