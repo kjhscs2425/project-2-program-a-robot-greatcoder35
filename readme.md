@@ -14,9 +14,8 @@ Project Requirements:
 * [ ] at least 2 functions have return values and at least one call to the function is assigned to a variable
 * [ ] each motor moves at least once
 ** [ ] the robot's movement changes based on at least 5 readings of the sonar sensors**** Wait for new code update to implement this part!!
-** [ ] use at least 1 while loop OR recursive function call
+* [ ] use at least 1 while loop OR recursive function call
 * [ ] at least one command (user input) causes the robot to move autonomously for at least 20 seconds
- 
 
 
 Dr. EB Todo:

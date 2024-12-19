@@ -32,8 +32,8 @@ def seizure(length):
             right(random.uniform(0.5,2))
 
 def first_move():
-    choice1 = float(input("How far should the robot move? (1-20) "))
-    forward(choice1*0.1)
+    choice1 = float(input("How far should the robot move? "))
+    forward(choice1)
     choice2 = str(input("What direction should the robot turn? (L or R) "))
     if choice2 == "L":
         print("turning left")
@@ -44,24 +44,16 @@ def first_move():
         choice2 = "R"
         right(90)
     choice3 = str(input("Should the robot move forward or backward? (F or B) "))
-    choice4 = float(input("How far should the robot move? (1-10) "))
+    choice4 = float(input("How far should the robot move? "))
     if choice3 == "B":
         print("moving backward")
         choice3 = "B"
-        backward(choice4*0.1)
+        backward(choice4)
     elif choice3 == "F":
         print("moving forward")
         choice3 = "F"
-        forward(choice4*0.1)
+        forward(choice4)
     choice5 = float(input("How many seconds should the robot have a seizure for? "))
     seizure(choice5)
 
 first_move()
-celebrate1 = input(str("What direction should the first celebration spin be? "))
-if celebrate1 == "R":
-    celebrate2 = "L"
-elif celebrate1 == "L":
-    celebrate2 = "R"
-spin(celebrate1,1)
-spin(celebrate2,1)
-seizure(20)
